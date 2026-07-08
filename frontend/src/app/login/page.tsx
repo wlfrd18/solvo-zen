@@ -23,7 +23,7 @@ export default function LoginPage() {
     setLoading(true);
     try {
       await login(email, password);
-      router.replace("/");
+      router.replace("/dashboard");
     } catch {
       setError("Email ou mot de passe incorrect.");
     } finally {

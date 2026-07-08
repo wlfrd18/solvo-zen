@@ -7,7 +7,7 @@ import { ReactNode, useEffect } from "react";
 import { logout, useIsAuthenticated } from "@/lib/auth";
 
 const NAV_ITEMS = [
-  { href: "/", label: "Accueil", icon: Wallet },
+  { href: "/dashboard", label: "Accueil", icon: Wallet },
   { href: "/setup", label: "Configuration", icon: SlidersHorizontal },
   { href: "/projection", label: "Projection", icon: Calendar },
 ];
