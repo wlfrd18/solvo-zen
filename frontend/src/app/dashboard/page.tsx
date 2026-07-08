@@ -25,7 +25,7 @@ export default function DashboardPage() {
         setSafeToSpend(sts);
         setProjection(proj);
       })
-      .catch(() => setError("Impossible de charger votre reste a vivre pour le moment."));
+      .catch(() => setError("Impossible de charger votre reste à vivre pour le moment."));
   }, []);
 
   return (
@@ -33,8 +33,8 @@ export default function DashboardPage() {
       <>
       <div className="flex flex-col gap-6">
         <div>
-          <h1 className="text-xl font-semibold tracking-tight">Votre reste a vivre</h1>
-          <p className="text-sm text-muted">Calcule automatiquement a partir de votre configuration.</p>
+          <h1 className="text-xl font-semibold tracking-tight">Votre reste à vivre</h1>
+          <p className="text-sm text-muted">Calculé automatiquement à partir de votre configuration.</p>
         </div>
 
         {error && <Alert variant="danger" title={error} />}
@@ -51,22 +51,22 @@ export default function DashboardPage() {
             <span className="text-sm text-muted">
               {safeToSpend.has_upcoming_income && safeToSpend.next_income_date
                 ? `jusqu'au ${formatDate(safeToSpend.next_income_date, true)}`
-                : `estime sur les ${safeToSpend.days_remaining} prochains jours (aucun revenu recurrent configure)`}
+                : `estimé sur les ${safeToSpend.days_remaining} prochains jours (aucun revenu récurrent configuré)`}
             </span>
           </Card>
         )}
 
         {projection?.has_overdraft_risk && (
-          <Alert variant="danger" title="Risque de decouvert detecte">
-            Le solde projete devient negatif le {formatDate(projection.lowest_balance_date, true)}
-            {" "}({formatAmount(projection.lowest_balance)}). Une depense fixe tombe avant une rentree
+          <Alert variant="danger" title="Risque de découvert détecté">
+            Le solde projeté devient négatif le {formatDate(projection.lowest_balance_date, true)}
+            {" "}({formatAmount(projection.lowest_balance)}). Une dépense fixe tombe avant une rentrée
             d&apos;argent suffisante.
           </Alert>
         )}
 
         {projection && !projection.has_overdraft_risk && (
-          <Alert variant="success" title="Aucun risque de decouvert detecte">
-            Point bas projete : {formatAmount(projection.lowest_balance)} le{" "}
+          <Alert variant="success" title="Aucun risque de découvert détecté">
+            Point bas projeté : {formatAmount(projection.lowest_balance)} le{" "}
             {formatDate(projection.lowest_balance_date, true)}.
           </Alert>
         )}
@@ -77,7 +77,7 @@ export default function DashboardPage() {
               <div className="flex items-center gap-3">
                 <Calendar className="h-5 w-5 text-brand" aria-hidden="true" />
                 <div>
-                  <p className="text-sm font-semibold">Voir la projection detaillee</p>
+                  <p className="text-sm font-semibold">Voir la projection détaillée</p>
                   <p className="text-xs text-muted">Solde jour par jour</p>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function DashboardPage() {
                 <TrendingDown className="h-5 w-5 text-brand" aria-hidden="true" />
                 <div>
                   <p className="text-sm font-semibold">Ajuster ma configuration</p>
-                  <p className="text-xs text-muted">Revenus, depenses, solde</p>
+                  <p className="text-xs text-muted">Revenus, dépenses, solde</p>
                 </div>
               </div>
               <ArrowRight className="h-4 w-4 text-muted" aria-hidden="true" />
@@ -103,7 +103,7 @@ export default function DashboardPage() {
           <Card>
             <div className="flex items-center gap-2">
               <AlertTriangle className="h-4 w-4 text-danger" aria-hidden="true" />
-              <h2 className="text-sm font-semibold">Jours a solde negatif</h2>
+              <h2 className="text-sm font-semibold">Jours à solde négatif</h2>
             </div>
             <ul className="mt-3 flex flex-col divide-y divide-border">
               {projection.overdraft_alerts.slice(0, 5).map((alert) => (

@@ -36,7 +36,7 @@ export default function ProjectionPage() {
       <div className="flex flex-col gap-6">
         <div>
           <h1 className="text-xl font-semibold tracking-tight">Projection</h1>
-          <p className="text-sm text-muted">Solde estime jour par jour sur les prochaines semaines.</p>
+          <p className="text-sm text-muted">Solde estimé jour par jour sur les prochaines semaines.</p>
         </div>
 
         {error && <Alert variant="danger" title={error} />}
@@ -44,7 +44,7 @@ export default function ProjectionPage() {
         {safeToSpend && (
           <Card className="flex flex-col gap-1">
             <span className="text-xs font-medium uppercase tracking-wide text-muted">
-              Budget quotidien recalibre
+              Budget quotidien recalibré
             </span>
             <span className="text-2xl font-bold text-brand-strong">
               {formatAmount(safeToSpend.daily_budget)}/jour
@@ -52,7 +52,7 @@ export default function ProjectionPage() {
             <span className="text-xs text-muted">
               {safeToSpend.has_upcoming_income && safeToSpend.next_income_date
                 ? `${safeToSpend.days_remaining} jours restants jusqu'au ${formatDate(safeToSpend.next_income_date, true)}`
-                : `estimation sur ${safeToSpend.days_remaining} jours, aucun revenu recurrent configure`}
+                : `estimation sur ${safeToSpend.days_remaining} jours, aucun revenu récurrent configuré`}
             </span>
           </Card>
         )}
@@ -81,7 +81,7 @@ export default function ProjectionPage() {
                       </span>
                     </div>
                     {isLowest && (
-                      <span className="text-xs font-medium text-warning">Point bas de la periode</span>
+                      <span className="text-xs font-medium text-warning">Point bas de la période</span>
                     )}
                     {day.events.length > 0 && (
                       <ul className="flex flex-wrap gap-2">

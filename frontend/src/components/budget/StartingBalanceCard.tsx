@@ -45,9 +45,9 @@ export function StartingBalanceCard({ onUpdated }: { onUpdated?: () => void }) {
       <div className="flex items-start gap-3">
         <Wallet className="mt-0.5 h-5 w-5 text-brand" aria-hidden="true" />
         <div>
-          <h2 className="text-base font-semibold">Solde de depart</h2>
+          <h2 className="text-base font-semibold">Solde de départ</h2>
           <p className="text-sm text-muted">
-            Le solde actuel de votre compte. Il sert de base a toute la projection.
+            Le solde actuel de votre compte. Il sert de base à toute la projection.
           </p>
         </div>
       </div>
@@ -74,11 +74,11 @@ export function StartingBalanceCard({ onUpdated }: { onUpdated?: () => void }) {
         </div>
       )}
       {saved && !error && (
-        <p className="mt-3 text-xs text-positive">Solde mis a jour.</p>
+        <p className="mt-3 text-xs text-positive">Solde mis à jour.</p>
       )}
       {balance && (
         <p className="mt-3 text-xs text-muted">
-          Derniere mise a jour : {new Date(balance.updated_at).toLocaleString("fr-FR")}
+          Dernière mise à jour : {new Date(balance.updated_at).toLocaleString("fr-FR")}
         </p>
       )}
     </Card>

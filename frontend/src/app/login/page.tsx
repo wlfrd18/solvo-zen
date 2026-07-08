@@ -37,7 +37,7 @@ export default function LoginPage() {
         <div className="mb-8 flex flex-col items-center gap-2 text-center">
           <Wallet className="h-8 w-8 text-brand" aria-hidden="true" />
           <h1 className="text-xl font-semibold tracking-tight">Solvo</h1>
-          <p className="text-sm text-muted">Connectez-vous pour retrouver votre reste a vivre.</p>
+          <p className="text-sm text-muted">Connectez-vous pour retrouver votre reste à vivre.</p>
         </div>
 
         <Card>
@@ -70,7 +70,7 @@ export default function LoginPage() {
         <p className="mt-5 text-center text-sm text-muted">
           Pas encore de compte ?{" "}
           <Link href="/register" className="font-medium text-brand hover:underline">
-            Creer un compte
+            Créer un compte
           </Link>
         </p>
       </div>

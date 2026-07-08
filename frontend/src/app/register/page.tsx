@@ -19,7 +19,7 @@ function extractErrorMessage(err: unknown): string {
       return firstField[0];
     }
   }
-  return "Impossible de creer le compte. Verifiez les informations saisies.";
+  return "Impossible de créer le compte. Vérifiez les informations saisies.";
 }
 
 export default function RegisterPage() {
@@ -50,7 +50,7 @@ export default function RegisterPage() {
         <div className="mb-8 flex flex-col items-center gap-2 text-center">
           <Wallet className="h-8 w-8 text-brand" aria-hidden="true" />
           <h1 className="text-xl font-semibold tracking-tight">Solvo</h1>
-          <p className="text-sm text-muted">Creez votre compte pour demarrer.</p>
+          <p className="text-sm text-muted">Créez votre compte pour démarrer.</p>
         </div>
 
         <Card>
@@ -76,13 +76,13 @@ export default function RegisterPage() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <Button type="submit" disabled={loading} className="mt-2 w-full">
-              {loading ? "Creation..." : "Creer mon compte"}
+              {loading ? "Création..." : "Créer mon compte"}
             </Button>
           </form>
         </Card>
 
         <p className="mt-5 text-center text-sm text-muted">
-          Deja un compte ?{" "}
+          Déjà un compte ?{" "}
           <Link href="/login" className="font-medium text-brand hover:underline">
             Se connecter
           </Link>

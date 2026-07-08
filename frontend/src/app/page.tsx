@@ -7,17 +7,17 @@ const FEATURES = [
   {
     icon: Repeat,
     title: "Configuration unique",
-    description: "Renseignez une seule fois vos revenus et depenses recurrents.",
+    description: "Renseignez une seule fois vos revenus et dépenses récurrents.",
   },
   {
     icon: Calendar,
     title: "Projection automatique",
-    description: "Votre solde est projete jour par jour, sans que vous ayez a y penser.",
+    description: "Votre solde est projeté jour par jour, sans que vous ayez à y penser.",
   },
   {
     icon: Gauge,
-    title: "Safe-to-spend en temps reel",
-    description: "Un montant disponible recalcule automatiquement a chaque changement.",
+    title: "Safe-to-spend en temps réel",
+    description: "Un montant disponible recalculé automatiquement à chaque changement.",
   },
 ];
 
@@ -32,18 +32,18 @@ export default function LandingPage() {
 
         <section className="mt-12 flex flex-col items-center gap-4 text-center md:mt-16">
           <h1 className="max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
-            Sachez exactement combien vous pouvez depenser aujourd&apos;hui, sans y penser.
+            Sachez exactement combien vous pouvez dépenser aujourd&apos;hui, sans y penser.
           </h1>
           <p className="max-w-xl text-sm text-muted md:text-base">
-            Solvo calcule automatiquement votre reste a vivre a partir de vos revenus et
-            depenses recurrents, jour apres jour.
+            Solvo calcule automatiquement votre reste à vivre à partir de vos revenus et
+            dépenses récurrents, jour après jour.
           </p>
           <div className="mt-4 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <Link
               href="/register"
               className="inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-strong"
             >
-              Creer un compte
+              Créer un compte
             </Link>
             <Link
               href="/login"
@@ -56,12 +56,12 @@ export default function LandingPage() {
 
         <section className="mt-16 md:mt-20">
           <Card>
-            <h2 className="text-base font-semibold">Le probleme du reste a vivre etudiant</h2>
+            <h2 className="text-base font-semibold">Le problème du reste à vivre au quotidien</h2>
             <p className="mt-2 text-sm text-muted">
-              Bourse, job etudiant, aide au logement : les revenus tombent a des dates
-              differentes chaque mois. Entre ces echeances et les depenses fixes qui
+              Salaire, allocations, aide au logement : les revenus tombent à des dates
+              différentes chaque mois. Entre ces échéances et les dépenses fixes qui
               suivent leur propre calendrier, il est difficile de savoir combien il reste
-              vraiment a depenser sans risquer le decouvert.
+              vraiment à dépenser sans risquer le découvert.
             </p>
           </Card>
         </section>

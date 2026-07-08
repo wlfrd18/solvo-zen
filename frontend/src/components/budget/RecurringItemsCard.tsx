@@ -48,7 +48,7 @@ export function RecurringItemsCard({
     api
       .get<RecurringItem[]>(apiPath)
       .then(setItems)
-      .catch(() => setError("Impossible de charger les donnees."));
+      .catch(() => setError("Impossible de charger les données."));
   }, [apiPath]);
 
   async function handleAdd(event: FormEvent) {
@@ -67,7 +67,7 @@ export function RecurringItemsCard({
       setDayOfMonth("1");
       setShowForm(false);
     } catch (err) {
-      setError(err instanceof ApiError ? "Verifiez les valeurs saisies." : "Une erreur est survenue.");
+      setError(err instanceof ApiError ? "Vérifiez les valeurs saisies." : "Une erreur est survenue.");
     } finally {
       setSubmitting(false);
     }
@@ -95,7 +95,7 @@ export function RecurringItemsCard({
       setItems((prev) =>
         (prev ?? []).map((i) => (i.id === item.id ? { ...i, is_active: item.is_active } : i))
       );
-      setError("Mise a jour impossible.");
+      setError("Mise à jour impossible.");
     }
   }
 
@@ -123,7 +123,7 @@ export function RecurringItemsCard({
       {showForm && (
         <form onSubmit={handleAdd} className="mt-4 grid grid-cols-2 gap-3 rounded-xl border border-border p-4">
           <div className="col-span-2">
-            <Input label="Libelle" value={label} onChange={(e) => setLabel(e.target.value)} required />
+            <Input label="Libellé" value={label} onChange={(e) => setLabel(e.target.value)} required />
           </div>
           <Input
             label="Montant (EUR)"
@@ -164,7 +164,7 @@ export function RecurringItemsCard({
             <button
               onClick={() => handleToggleActive(item)}
               className="flex flex-1 items-center gap-3 text-left"
-              title={item.is_active ? "Cliquer pour desactiver" : "Cliquer pour reactiver"}
+              title={item.is_active ? "Cliquer pour désactiver" : "Cliquer pour réactiver"}
             >
               <span
                 className={`h-2 w-2 shrink-0 rounded-full ${

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Solvo",
-  description: "Le reste a vivre de l'etudiant, calcule automatiquement.",
+  description: "Le reste à vivre calculé automatiquement.",
 };
 
 export default function RootLayout({

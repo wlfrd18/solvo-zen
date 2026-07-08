@@ -69,7 +69,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted transition-colors hover:bg-background hover:text-danger"
           >
             <LogOut className="h-4 w-4" aria-hidden="true" />
-            Deconnexion
+            Déconnexion
           </button>
         </div>
       </aside>
@@ -85,7 +85,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               logout();
               router.replace("/login");
             }}
-            aria-label="Deconnexion"
+            aria-label="Déconnexion"
             className="rounded-lg p-2 text-muted hover:bg-background hover:text-danger"
           >
             <LogOut className="h-5 w-5" aria-hidden="true" />

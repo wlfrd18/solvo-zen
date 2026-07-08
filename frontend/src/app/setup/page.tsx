@@ -12,29 +12,29 @@ export default function SetupPage() {
         <div>
           <h1 className="text-xl font-semibold tracking-tight">Configuration</h1>
           <p className="text-sm text-muted">
-            Renseignez vos revenus et depenses recurrents une seule fois : Solvo se charge du reste.
+            Renseignez vos revenus et dépenses récurrents une seule fois : Solvo se charge du reste.
           </p>
         </div>
 
         <StartingBalanceCard />
 
         <RecurringItemsCard
-          title="Revenus recurrents"
-          description="Bourse, salaire, aide au logement..."
+          title="Revenus récurrents"
+          description="Salaire, allocations, aide au logement..."
           icon={TrendingUp}
           apiPath="/budget/incomes/"
           addButtonLabel="Ajouter un revenu"
-          emptyMessage="Aucun revenu recurrent configure pour le moment."
+          emptyMessage="Aucun revenu récurrent configuré pour le moment."
           amountAccent="positive"
         />
 
         <RecurringItemsCard
-          title="Depenses fixes recurrentes"
+          title="Dépenses fixes récurrentes"
           description="Loyer, abonnements, assurances..."
           icon={TrendingDown}
           apiPath="/budget/expenses/"
-          addButtonLabel="Ajouter une depense"
-          emptyMessage="Aucune depense fixe configuree pour le moment."
+          addButtonLabel="Ajouter une dépense"
+          emptyMessage="Aucune dépense fixe configurée pour le moment."
           amountAccent="danger"
         />
       </div>

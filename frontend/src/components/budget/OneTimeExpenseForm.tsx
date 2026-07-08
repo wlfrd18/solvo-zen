@@ -37,7 +37,7 @@ export function OneTimeExpenseForm({ onAdded }: { onAdded: (expense: OneTimeExpe
       setDate(today());
       setOpen(false);
     } catch {
-      setError("Impossible d'ajouter cette depense.");
+      setError("Impossible d'ajouter cette dépense.");
     } finally {
       setSubmitting(false);
     }
@@ -47,21 +47,21 @@ export function OneTimeExpenseForm({ onAdded }: { onAdded: (expense: OneTimeExpe
     return (
       <Button variant="secondary" onClick={() => setOpen(true)} className="w-full sm:w-auto">
         <PlusCircle className="h-4 w-4" aria-hidden="true" />
-        Ajouter une depense ponctuelle
+        Ajouter une dépense ponctuelle
       </Button>
     );
   }
 
   return (
     <Card>
-      <h2 className="text-base font-semibold">Depense libre ponctuelle</h2>
+      <h2 className="text-base font-semibold">Dépense libre ponctuelle</h2>
       <p className="text-sm text-muted">
-        Optionnel : recalibre automatiquement votre budget quotidien jusqu&apos;a la prochaine rentree
+        Optionnel : recalibre automatiquement votre budget quotidien jusqu&apos;à la prochaine rentrée
         d&apos;argent.
       </p>
       <form onSubmit={handleSubmit} className="mt-4 grid grid-cols-2 gap-3">
         <div className="col-span-2">
-          <Input label="Libelle" value={label} onChange={(e) => setLabel(e.target.value)} required />
+          <Input label="Libellé" value={label} onChange={(e) => setLabel(e.target.value)} required />
         </div>
         <Input
           label="Montant (EUR)"
