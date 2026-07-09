@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: solvo-postgres-pvc
+  namespace: solvo
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solvo-postgres
+  namespace: solvo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solvo-postgres
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: solvo-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16-alpine
+          envFrom:
+            - secretRef:
+                name: solvo-postgres-secret
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: solvo-postgres-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: solvo-postgres-service
+  namespace: solvo
+spec:
+  selector:
+    app: solvo-postgres
+  ports:
+    - port: 5432
+      targetPort: 5432

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solvo-frontend
+  namespace: solvo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solvo-frontend
+  template:
+    metadata:
+      labels:
+        app: solvo-frontend
+    spec:
+      containers:
+        - name: solvo-frontend
+          image: docker.io/library/solvo-frontend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NEXT_PUBLIC_API_URL
+              value: "/api"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: solvo-frontend-service
+  namespace: solvo
+spec:
+  type: NodePort
+  selector:
+    app: solvo-frontend
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30080

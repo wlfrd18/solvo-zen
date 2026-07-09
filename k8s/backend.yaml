@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solvo-backend
+  namespace: solvo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solvo-backend
+  template:
+    metadata:
+      labels:
+        app: solvo-backend
+    spec:
+      containers:
+        - name: solvo-backend
+          image: docker.io/library/solvo-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: solvo-backend-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: solvo-backend-service
+  namespace: solvo
+spec:
+  selector:
+    app: solvo-backend
+  ports:
+    - port: 8000
+      targetPort: 8000
