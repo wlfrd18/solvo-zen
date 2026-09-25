@@ -20,3 +20,11 @@ frontend/.next/
 .idea/
 .DS_Store
 .claude/
+
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+.env
+*.pem
+kubeconfig*
