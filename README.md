@@ -1,6 +1,6 @@
-# Solvo
+# Solvo-Zen
 
-Solvo calcule automatiquement le **reste a vivre** projete d'un etudiant,
+Solvo-Zen calcule automatiquement le **reste a vivre** projete d'un etudiant,
 jour par jour, a partir de ses revenus et depenses recurrents. Pas de
 saisie quotidienne : une seule configuration (revenus, depenses fixes,
 solde de depart) suffit pour obtenir un budget quotidien "safe-to-spend"
